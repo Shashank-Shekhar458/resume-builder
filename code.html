@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Builder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #667eea, #764ba2);
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 5px;
+      color: #444;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 5px rgba(102,126,234,0.5);
+    }
+
+    textarea {
+      resize: none;
+      height: 80px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #667eea;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #5a67d8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Resume Builder</h1>
+
+    <!-- Photo -->
+    <div class="input-group">
+      <label>Profile Photo</label>
+      <input type="file" id="photo">
+    </div>
+
+    <!-- Basic Info -->
+    <div class="input-group">
+      <label>Full Name</label>
+      <input id="name" placeholder="Enter your name">
+    </div>
+
+    <div class="input-group">
+      <label>Email</label>
+      <input id="email" placeholder="Enter your email">
+    </div>
+
+    <div class="input-group">
+      <label>Phone</label>
+      <input id="phone" placeholder="Enter phone number">
+    </div>
+
+    <!-- Summary -->
+    <div class="input-group">
+      <label>Profile Summary</label>
+      <textarea id="summary" placeholder="Write about yourself"></textarea>
+    </div>
+
+    <!-- Skills -->
+    <div class="input-group">
+      <label>Skills (comma separated)</label>
+      <textarea id="skills" placeholder="HTML, CSS, JavaScript"></textarea>
+    </div>
+
+    <!-- Education -->
+    <div class="input-group">
+      <label>Education (comma or new line)</label>
+      <textarea id="education" placeholder="10th..., 12th..., Graduation..."></textarea>
+    </div>
+
+    <!-- Experience -->
+    <div class="input-group">
+      <label>Experience (comma or new line)</label>
+      <textarea id="experience" placeholder="2 yrs at..., 4 yrs at..."></textarea>
+    </div>
+
+    <!-- Button -->
+    <button onclick="generatePDF()">Download Resume</button>
+  </div>
+
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- JS -->
+  <script src="logic.js"></script>
+
+</body>
+</html>
